@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const cp = require('child_process');
 const fs = require('fs');
 const path = require('path');
@@ -10,7 +11,7 @@ app.set('view engine', 'pug');
 app.locals.basedir = path.join(__dirname, 'views');
 
 // Pages
-app.get('/', (_, res) => res.render('index'));
+app.get('/', (_, res) => res.json('{}'));
 
 app.get('/variables/types', (_, res) => res.render('pages/variables/types'));
 app.get('/variables/assignment', (_, res) => res.render('pages/variables/assignment'));
@@ -26,6 +27,7 @@ app.get('/this', (_, res) => res.render('pages/this/this'));
 app.get('/oop', (_, res) => res.render('pages/oop/oop'));
 app.get('/array', (_, res) => res.render('pages/array/array'));
 app.get('/object', (_, res) => res.render('pages/object/object'));
+app.get('/codeplay', (_, res) => res.render('pages/codeplay/codeplay'));
 
 // Execute code
 app.post('/play', async (req, res) => {
